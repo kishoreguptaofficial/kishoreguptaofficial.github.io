@@ -4,35 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kishore Gupta | Introduction</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#0b1a33; color:white; line-height:1.6; scroll-behavior:smooth; }
-    section { padding:60px 20px; max-width:1000px; margin:auto; }
+    body {
+      margin:0;
+      font-family:'Poppins', sans-serif;
+      background: linear-gradient(135deg,#0b1a33,#050d1f);
+      color:white;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+
+    section {
+      padding:70px 20px;
+      max-width:1100px;
+      margin:auto;
+    }
+
     h1,h2,h3 { text-align:center; }
-    h1 { font-size:42px; }
 
-    .btn { padding:12px 24px; margin:10px; border-radius:8px; border:none; cursor:pointer; font-size:16px; transition:0.3s; }
-    .btn:hover { transform: translateY(-3px); box-shadow:0 4px 15px rgba(0,0,0,0.3); }
-    .primary { background:#3b82f6; color:white; }
+    h1 {
+      font-size:46px;
+      animation: fadeIn 1s ease-in;
+    }
 
-    .card { background:#13244d; padding:20px; margin:15px 0; border-radius:10px; transition:0.3s; }
-    .card:hover { transform:scale(1.02); }
+    p { text-align:center; color:#cbd5f5; }
 
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    /* BUTTON */
+    .btn {
+      padding:14px 28px;
+      margin:10px;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+      background: linear-gradient(45deg,#3b82f6,#6366f1);
+      color:white;
+    }
 
-    footer { text-align:center; padding:30px 20px; background:#081224; margin-top:40px; }
-    .footer-icons { margin-top:10px; }
-    .footer-icons a { margin:0 10px; color:#3b82f6; font-size:20px; text-decoration:none; }
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    /* CARD */
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding:22px;
+      margin:15px 0;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover {
+      transform:scale(1.03);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align:center;
+      padding:40px 20px;
+      background:#030a18;
+      margin-top:40px;
+    }
+
+    .footer-icons p {
+      margin:6px 0;
+    }
+
+    .footer-icons a {
+      color:#3b82f6;
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    .footer-icons a:hover {
+      text-decoration:underline;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(20px);} 
+      to {opacity:1; transform:translateY(0);} 
+    }
+
   </style>
 </head>
 <body>
 
   <!-- HERO -->
   <section>
-    <h1>Hi, I am Kishore Kumar Gupta </h1>
-    <p style="text-align:center;">Automation QA Lead | ISTQB Certified | 10+ Years Experience</p>
+    <h1>Hi, I am Kishore Kumar Gupta 👋</h1>
+    <p>Automation QA Lead | ISTQB Certified | 10+ Years Experience</p>
     <div style="text-align:center;">
       <a href="Resume.pdf" download>
-        <button class="btn primary">Download Resume</button>
+        <button class="btn">Download Resume</button>
       </a>
     </div>
   </section>
@@ -43,8 +123,8 @@
     <p>
       Experienced QA professional with 10+ years of expertise across Manufacturing, Insurance, Banking, 
       and Healthcare domains. ISTQB Foundation Level (CTFL v4.0) certified, specializing in automation, manual, 
-      DB, API, and accessibility testing, with a with strong leadership experience, building robust frameworks, 
-      and ensuring high-quality software delivery on time.
+      DB, API, and accessibility testing, with strong leadership experience in building robust frameworks and ensuring 
+      high-quality software delivery.
     </p>
   </section>
 
@@ -75,10 +155,8 @@
       <p><strong>Databases:</strong> SQL, Oracle, MongoDB</p>
       <p><strong>IDEs & Platforms:</strong> Eclipse, Visual Studio, SQL Developer, PyCharm, IDLE, IntelliJ IDEA Ultimate</p>
       <p><strong>Accessibility Tools:</strong> Access Assistant, NVDA, IBM Equal Access Accessibility Checker</p>
-      <p><strong>Automation & Testing Tools:</strong> Selenium, QTP, TestNG, Jenkins, Tableau, RADAR, HP ALM, JIRA, TFS, 
-                                                      ADS, HANA Studio, Perfecto, Gigafox, Postman, Gauge</p>
+      <p><strong>Automation & Testing Tools:</strong> Selenium, QTP, TestNG, Jenkins, Tableau, RADAR, HP ALM, JIRA, TFS, ADS, HANA Studio, Perfecto, Gigafox, Postman, Gauge</p>
       <p><strong>Methodologies & Frameworks:</strong> Waterfall, SAFe, Scrum, TDD, BDD, Hybrid/Data-driven/POM/Modular/Method-driven</p>
-      
     </div>
   </section>
 
