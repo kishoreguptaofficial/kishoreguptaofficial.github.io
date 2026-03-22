@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools - Kishore Gupta</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+textarea {
+  width: 90%;
+  height: 150px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Free Tools 🔧</h1>
+<p>Simple tools to make your work easier</p>
+
+<h2>Word Counter</h2>
+
+<textarea id="text" placeholder="Type or paste your text here..."></textarea>
+
+<div class="result">
+  <p>Words: <span id="words">0</span></p>
+  <p>Characters: <span id="chars">0</span></p>
+</div>
+
+<p><a href="/">← Back to Home</a></p>
+
+<script>
+const textArea = document.getElementById("text");
+
+textArea.addEventListener("input", () => {
+  let text = textArea.value;
+
+  let words = text.trim().split(/\s+/).filter(word => word.length > 0);
+  document.getElementById("words").innerText = words.length;
+
+  document.getElementById("chars").innerText = text.length;
+});
+</script>
+
+</body>
+</html>
