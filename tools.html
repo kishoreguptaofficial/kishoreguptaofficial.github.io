@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools - Kishore Gupta</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+textarea, input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Free Tools 🔧</h1>
+<p>Simple, fast & useful tools</p>
+
+<div class="tools-grid">
+
+<!-- Word Counter -->
+<div class="card">
+<h2>Word & Character Counter</h2>
+<textarea id="text" placeholder="Enter text..."></textarea>
+<div class="result">
+<p>Words: <span id="words">0</span></p>
+<p>Characters: <span id="chars">0</span></p>
+</div>
+</div>
+
+<!-- Password Generator -->
+<div class="card">
+<h2>Password Generator</h2>
+<input type="number" id="length" placeholder="Password length (e.g. 12)">
+<button onclick="generatePassword()">Generate</button>
+<p id="password"></p>
+</div>
+
+<!-- Case Converter -->
+<div class="card">
+<h2>Text Case Converter</h2>
+<textarea id="caseText" placeholder="Enter text..."></textarea>
+<button onclick="toUpper()">UPPERCASE</button>
+<button onclick="toLower()">lowercase</button>
+<button onclick="toCapitalize()">Capitalize</button>
+</div>
+
+<!-- Calculator -->
+<div class="card">
+<h2>Simple Calculator</h2>
+<input type="text" id="calcInput" placeholder="e.g. 5+5*2">
+<button onclick="calculate()">Calculate</button>
+<p id="calcResult"></p>
+</div>
+
+</div>
+
+<a class="btn" href="/">← Back to Home</a>
+
+</div>
+
+<script>
+// Word Counter
+const textArea = document.getElementById("text");
+textArea.addEventListener("input", () => {
+  let text = textArea.value;
+  let words = text.trim().split(/\s+/).filter(w => w.length > 0);
+  document.getElementById("words").innerText = words.length;
+  document.getElementById("chars").innerText = text.length;
+});
+
+// Password Generator
+function generatePassword() {
+  let length = document.getElementById("length").value;
+  let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+  let pass = "";
+  for (let i = 0; i < length; i++) {
+    pass += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  document.getElementById("password").innerText = pass;
+}
+
+// Case Converter
+function toUpper() {
+  let text = document.getElementById("caseText").value;
+  document.getElementById("caseText").value = text.toUpperCase();
+}
+
+function toLower() {
+  let text = document.getElementById("caseText").value;
+  document.getElementById("caseText").value = text.toLowerCase();
+}
+
+function toCapitalize() {
+  let text = document.getElementById("caseText").value;
+  document.getElementById("caseText").value =
+    text.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Calculator
+function calculate() {
+  let input = document.getElementById("calcInput").value;
+  try {
+    document.getElementById("calcResult").innerText = eval(input);
+  } catch {
+    document.getElementById("calcResult").innerText = "Invalid expression";
+  }
+}
+</script>
+
+</body>
+</html>
