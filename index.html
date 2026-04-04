@@ -14,55 +14,63 @@
 <header>
   <nav class="navbar">
 
-      <!-- LOGO -->
-      <div class="logo-container">
-        <img src="images/logo.svg" class="logo-img" alt="Logo">
-      </div>
+    <div class="navbar-container">
 
-      <!-- SEARCH BAR -->
-      <div class="search-container">
-  
-        <div class="nav-search">
-          <i class="fas fa-search" id="searchBtn"></i>
-          <input type="text" id="searchInput" placeholder="Search..." />
-          <!-- CLEAR BUTTON -->
-          <i class="fas fa-times clear-btn" id="clearBtn"></i>
+      <!-- LEFT: LOGO -->
+      <div class="nav-left">
+        <div class="logo-container">
+          <img src="images/logo.svg" class="logo-img" alt="Logo">
         </div>
-
-        <div class="search-feedback" id="searchFeedback"></div>        
-
       </div>
 
-      <!-- NAV LINKS -->
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#articles">Articles</a></li>
-      </ul>
-
-      <!-- HAMBURGER -->
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- CENTER: SEARCH -->
+      <div class="nav-center">
+        <div class="search-container">
+          <div class="nav-search">
+            <i class="fas fa-search" id="searchBtn"></i>
+            <input type="text" id="searchInput" placeholder="Search..." />
+            <i class="fas fa-times clear-btn" id="clearBtn"></i>
+          </div>
+          <div class="search-feedback" id="searchFeedback"></div>        
+        </div>
       </div>
 
-  </nav>    
-    <!-- SIDE MENU -->
-    <div class="side-menu" id="side-menu">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <!-- RIGHT: NAV LINKS -->
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#articles">Articles</a></li>
+        </ul>
+
+        <!-- HAMBURGER -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
     </div>
-    
+
+  </nav>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" id="side-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#articles">Articles</a></li>
+    </ul>
+  </div>
 </header>
 
-<!-- KEEP ALL YOUR EXISTING SECTIONS SAME BELOW -->
+<div class="menu-overlay" id="menu-overlay"></div>
+
 <!-- Hero Section -->
   <section id="home" class="hero section">
 
@@ -72,8 +80,8 @@
       I build quality into software. With 10+ years of experience in automation and testing, I specialize in creating scalable test frameworks and ensuring reliability across modern web, API, and cloud applications.
     </p>
     <div class="hero-btn">
-      <a href="Kishore_Gupta_Resume.pdf" download class="send-btn resume-btn">
-        View My Resume
+      <a href="documents/Kishore_Gupta_Resume.pdf" download class="send-btn resume-btn">
+        Download My Resume
       </a>
     </div>
      
@@ -81,9 +89,10 @@
 
   <!-- Move to Top Chevron -->
   <a href="#" class="back-to-top" id="backToTop">
-    <span class="tooltip">Move to Top</span>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-      <path d="M6 14L12 8L18 14" stroke="#64ffda" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <span class="tooltip">Back to Top</span>
+
+    <svg id="arrowIcon" width="22" height="22" viewBox="0 0 24 24">
+      <path d="M6 14L12 8L18 14" stroke="#64ffda" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
   </a>
 
@@ -94,7 +103,7 @@
 
       <!-- PROFILE IMAGE -->
       <div class="about-image reveal">
-        <img src="images/profile.png" alt="Kishore Gupta">
+        <img src="images/profile.jpg" alt="Kishore Gupta">
       </div>
 
       <!-- ABOUT TEXT -->
@@ -200,116 +209,149 @@
 
 </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT SECTION -->  
   <section id="contact" class="section">
 
-  <div class="contact-header">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out — I am always open to meaningful conversations and new opportunities.</p>
-  </div>
-
-  <div class="contact-grid">
-
-      <!-- LEFT COLUMN -->
-      <div class="contact-left">
-
-        <div class="info-item">
-          <i class="fas fa-envelope"></i>
-          <span>kishoreguptaofficial@gmail.com</span>
-        </div>
-
-        <div class="info-item">
-          <i class="fas fa-phone-alt"></i>
-          <span>+91 - 997 998 0993</span>
-        </div>
-
-        <div class="info-item">
-          <i class="fas fa-location-dot"></i>
-          <span>India</span>
-        </div>
-
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/kishoreguptaofficial/"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-
-        <a href="https://wa.me/917022466118" target="_blank" class="whatsapp-btn">
-          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-        </a>
-
+      <!-- HEADER -->
+      <div class="contact-header">
+        <h2>Contact Me</h2>
+        <p>
+          Feel free to reach out — I am always open to meaningful conversations and new opportunities.
+        </p>
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div class="contact-right">
+      <!-- GRID -->
+      <div class="contact-grid">
 
-        <form id="contact-form">
+        <!-- LEFT COLUMN -->
+        <div class="contact-left">
 
-          <div class="input-group">
-            <input type="text" name="user_name" required placeholder=" ">
-            <label>Enter Your Name</label>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>kishoreguptaofficial@gmail.com</span>
           </div>
 
-          <div class="input-group">
-            <input type="email" name="user_email" required placeholder=" ">
-            <label>Enter Your Email</label>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+91 - 997 998 0993</span>
           </div>
 
-          <div class="input-group message-box">
-            <textarea name="message" rows="5" required placeholder=" "></textarea>
-            <label>Enter Your Message</label>
+          <div class="info-item">
+            <i class="fas fa-location-dot"></i>
+            <span>India</span>
           </div>
 
-          <div class="form-actions">
-            <button type="submit" class="send-btn">
-              <span id="btn-text">Send Message</span>
-              <span id="loader" class="loader"></span>
-            </button>
-            <span id="msg"></span>
+          <!-- SOCIAL ICONS -->
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/kishoreguptaofficial/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
 
-        </form>
+          <!-- WHATSAPP BUTTON -->
+          <a href="https://wa.me/917022466118" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="contact-right">
+
+          <form id="contact-form">
+
+            <div class="input-group">
+              <input type="text" name="user_name" required placeholder=" ">
+              <label>Enter Your Name</label>
+            </div>
+
+            <div class="input-group">
+              <input type="email" name="user_email" required placeholder=" ">
+              <label>Enter Your Email</label>
+            </div>
+
+            <div class="input-group message-box">
+              <textarea name="message" rows="5" required placeholder=" "></textarea>
+              <label>Enter Your Message</label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="send-btn">
+                <span id="btn-text">Send Message</span>
+                <span id="loader" class="loader"></span>
+              </button>
+              <span id="msg"></span>
+            </div>
+
+          </form>
+
+        </div>
 
       </div>
-
-    </div>
 
   </section>
 
+  <!-- FOOTER SECTION -->
   <footer class="footer">
 
-      <div class="footer-container">
+        <div class="footer-container">
 
-        <!-- LEFT -->
-        <div class="footer-left">
-          <h3>Kishore Gupta</h3>
-          <p>Creating digital portfolio and sharing experiences.</p>
+          <!-- TOP: BRAND -->
+          <div class="footer-brand">
+            <img src="images/logo.svg" alt="Logo" class="footer-logo">
+            <p>Building digital portfolio and modern digital experiences.</p>
+          </div>
+
+          <!-- LINKS GRID -->
+          <div class="footer-grid">
+
+            <div class="footer-col">
+              <h4>Company</h4>
+              <a href="#">About</a>
+              <a href="#">Careers</a>
+              <a href="#">Articles</a>
+            </div>
+
+            <div class="footer-col">
+              <h4>Services</h4>
+              <a href="#">Web Development</a>
+              <a href="#">Automation</a>
+              <a href="#">Cloud</a>
+            </div>
+
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <a href="#">Projects</a>
+              <a href="#">Blog</a>
+              <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-col">
+              <h4>Support</h4>
+              <a href="#">Help Center</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms</a>
+            </div>
+
+          </div>
+
+          <!-- BOTTOM -->
+          <div class="footer-bottom">
+
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <p>© 2026 Kishore Gupta. All Rights Reserved.</p>
+
+          </div>
+
         </div>
-
-        <!-- CENTER -->
-        <div class="footer-links">
-          <a href="#home"><span>Home</span></a>
-          <a href="#about"><span>About</span></a>
-          <a href="#projects"><span>Projects</span></a>
-          <a href="#contact"><span>Contact</span></a>
-          <a href="#articles"><span>Articles</span></a>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/kishoreguptaofficial/"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM -->
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> Kishore Gupta</p>
-      </div>
 
   </footer>
-
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
@@ -357,26 +399,6 @@
         });
       }
 
-
-      /* =========================
-        BACK TO TOP
-      ========================= */
-      const backToTop = document.getElementById("backToTop");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          backToTop?.classList.add("show");
-        } else {
-          backToTop?.classList.remove("show");
-        }
-      });
-
-      backToTop?.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-
       /* =========================
         NAVBAR SCROLL EFFECT
       ========================= */
@@ -389,19 +411,6 @@
           nav?.classList.remove("scrolled");
         }
       });
-
-
-      /* =========================
-        MOBILE MENU
-      ========================= */
-      const menuToggle = document.getElementById("menu-toggle");
-      const sideMenu = document.getElementById("side-menu");
-
-      menuToggle?.addEventListener("click", () => {
-        menuToggle.classList.toggle("active");
-        sideMenu.classList.toggle("active");
-      });
-
 
       /* =========================
         SCROLL REVEAL
@@ -521,21 +530,82 @@
       /* ==========================
         DYNAMIC COPYRIGHT YEAR
       ========================== */  
-      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();       
 
-      /* ==========================
-        CHEVRON HIDE ON TOP
-      ========================== */
-      const btn = document.getElementById("backToTop");
+      /* =============================
+        SIDE BAR MENU IN HAMBURGER
+      ================================ */
+      const menuToggle = document.getElementById("menu-toggle");
+      const sideMenu = document.getElementById("side-menu");
+      const overlay = document.getElementById("menu-overlay");
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 200) {
-          btn.style.opacity = "1";
-        } else {
-          btn.style.opacity = "0";
-        }
+      menuToggle.addEventListener("click", () => {
+        sideMenu.classList.toggle("active");
+        overlay.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
       });
 
+      /* CLOSE ON LINK */
+      document.querySelectorAll(".side-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
+
+      /* CLOSE ON OUTSIDE */
+      overlay.addEventListener("click", closeMenu);
+
+      function closeMenu() {
+        sideMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        menuToggle.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      }
+
+      /* =========================
+        BACK TO TOP (FINAL CLEAN)
+      ========================= */
+      const btn = document.getElementById("backToTop");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+      /* FIX SCROLL POSITION ON REFRESH */
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+        // FORCE TOP ON LOAD
+        window.scrollTo(0, 0);
+
+        if (window.location.hash) {
+          window.scrollTo(0, 0);
+        }
+
+      });
+
+      /* =========================
+        FOOTER SCROLL REVEAL
+      ========================= */     
+
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            footer.classList.add("show");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      footerObserver.observe(footer);
 
   </script>
 
