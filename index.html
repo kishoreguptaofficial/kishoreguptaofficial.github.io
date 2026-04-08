@@ -350,15 +350,39 @@
 
         <!-- LEFT COLUMN -->
         <div class="contact-left">
-
+         
+          
+          <!-- ================= EMAIL ================= -->
           <div class="info-item">
             <i class="fas fa-envelope"></i>
-            <span>kishoreguptaofficial@gmail.com</span>
+
+            <span class="reveal-text" id="emailText">
+              Click to view email
+            </span>
+
+            <div class="copy-wrapper">
+              <button class="copy-btn disabled" id="emailCopy">
+                <i class="fas fa-copy"></i>
+              </button>
+              <span class="copy-label" id="emailLabel">Copy</span>
+            </div>
           </div>
 
+
+          <!-- ================= PHONE ================= -->
           <div class="info-item">
             <i class="fas fa-phone-alt"></i>
-            <span>+91 - 997 998 0993</span>
+
+            <span class="reveal-text" id="phoneText">
+              Click to view number
+            </span>
+
+            <div class="copy-wrapper">
+              <button class="copy-btn disabled" id="phoneCopy">
+                <i class="fas fa-copy"></i>
+              </button>
+              <span class="copy-label" id="phoneLabel">Copy</span>
+            </div>
           </div>
 
           <div class="info-item">
@@ -433,23 +457,23 @@
 
             <div class="footer-col">
               <h4>Company</h4>
-              <a href="#">About</a>
+              <a href="#about">About</a>
               <a href="#">Careers</a>
-              <a href="#">Articles</a>
+              <a href="#articles">Articles</a>
             </div>
 
             <div class="footer-col">
               <h4>Services</h4>
-              <a href="#">Web Development</a>
-              <a href="#">Automation</a>
-              <a href="#">Cloud</a>
+              <a href="#projects">Web Development</a>
+              <a href="#projects">Automation</a>
+              <a href="#projects">Cloud</a>
             </div>
 
             <div class="footer-col">
               <h4>Resources</h4>
-              <a href="#">Projects</a>
-              <a href="#">Blog</a>
-              <a href="#">Contact</a>
+              <a href="#projects">Projects</a>
+              <a href="#">Blogs</a>
+              <a href="#contact">Contact</a>
             </div>
 
             <div class="footer-col">
@@ -647,6 +671,87 @@
       window.addEventListener("scroll", revealOnScroll);
       window.addEventListener("load", revealOnScroll);
 
+      /* ===================================
+        EMAIL + PHONE REVEAL + AUTO HIDE
+      ======================================= */     
+
+      const emailText = document.getElementById("emailText");
+      const emailCopy = document.getElementById("emailCopy");
+      const emailLabel = document.getElementById("emailLabel");
+
+      const phoneText = document.getElementById("phoneText");
+      const phoneCopy = document.getElementById("phoneCopy");
+      const phoneLabel = document.getElementById("phoneLabel");
+
+      /* 🔒 DATA */
+      const email = "kishoreguptaofficial@gmail.com";
+      const phone = "+91 9979980993";
+
+      /* TIMERS */
+      let emailTimer;
+      let phoneTimer;
+
+      /* =========================
+        RESET FUNCTIONS
+      ========================= */
+
+      function resetEmail() {
+        emailText.textContent = "Click to view email";
+        emailCopy.classList.add("disabled");
+        emailLabel.textContent = "Copy";
+      }
+
+      function resetPhone() {
+        phoneText.textContent = "Click to view number";
+        phoneCopy.classList.add("disabled");
+        phoneLabel.textContent = "Copy";
+      }
+
+      /* =========================
+        EMAIL LOGIC
+      ========================= */
+
+      emailText.addEventListener("click", () => {
+        emailText.textContent = email;
+        emailCopy.classList.remove("disabled");
+
+        clearTimeout(emailTimer);
+        emailTimer = setTimeout(resetEmail, 10000); // 10 sec reset
+      });
+
+      emailCopy.addEventListener("click", async () => {
+        if (emailCopy.classList.contains("disabled")) return;
+
+        await navigator.clipboard.writeText(email);
+
+        emailLabel.textContent = "✔ Copied!";
+
+        clearTimeout(emailTimer);
+        emailTimer = setTimeout(resetEmail, 10000);
+      });
+
+      /* =========================
+        PHONE LOGIC
+      ========================= */
+
+      phoneText.addEventListener("click", () => {
+        phoneText.textContent = phone;
+        phoneCopy.classList.remove("disabled");
+
+        clearTimeout(phoneTimer);
+        phoneTimer = setTimeout(resetPhone, 10000);
+      });
+
+      phoneCopy.addEventListener("click", async () => {
+        if (phoneCopy.classList.contains("disabled")) return;
+
+        await navigator.clipboard.writeText(phone);
+
+        phoneLabel.textContent = "✔ Copied!";
+
+        clearTimeout(phoneTimer);
+        phoneTimer = setTimeout(resetPhone, 10000);
+      });
 
       /* =========================
         SEARCH SYSTEM
@@ -791,8 +896,25 @@
 
       footerObserver.observe(footer);
 
-  </script>
+      /* =========================================
+              PERFECT SCROLL CONTROL
+      ========================================== */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          const offset = 80; // navbar height
 
+          const position = target.offsetTop - offset;
+
+          window.scrollTo({
+            top: position,
+            behavior: "smooth"
+          });
+        });
+      });
+
+  </script>
   
 </body>
 </html>
